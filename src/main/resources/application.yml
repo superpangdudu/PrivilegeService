@@ -1,0 +1,30 @@
+
+server:
+  port: 8488
+
+spring:
+  application:
+    name: privilege-service
+  redis:
+    database: 3
+    host: 127.0.0.1
+    port: 6379
+  session:
+    store-type: redis
+
+privilege:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/logistic?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://127.0.0.1:18488/eureka
+
